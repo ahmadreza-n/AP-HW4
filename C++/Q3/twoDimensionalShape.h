@@ -5,14 +5,12 @@
 class CTwoDimensionalShape : public CShape
 {
 private:
-  int sideSize;
 public:
   CTwoDimensionalShape();
-  ~CTwoDimensionalShape();
+  virtual ~CTwoDimensionalShape();
 
-  CTwoDimensionalShape(const int &sideSize_);
-
-  virtual double area() const override;
+  virtual double area() const = 0;
+  virtual void print(std::ostream &) const override = 0;
 };
 
 #endif

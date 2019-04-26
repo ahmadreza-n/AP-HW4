@@ -5,10 +5,16 @@
 
 class CCircle : public CTwoDimensionalShape
 {
-  private:
-  public:
-    CCircle();
-    ~CCircle();
+public:
+  double radius, centerX, centerY;
+
+public:
+  CCircle();
+  virtual ~CCircle();
+  CCircle(double radius_, double centerX_ = 0, double centerY_ = 0);
+
+  double area() const override final;
+  void print(std::ostream &) const override final;
 };
 
 #endif

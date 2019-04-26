@@ -1,5 +1,6 @@
-#ifndef SHAPE_h
+#ifndef SHAPE_H
 #define SHAPE_H
+#include <iostream>
 
 class CShape
 {
@@ -9,10 +10,11 @@ protected:
 public:
   CShape();
   CShape(const int &dimensionSize_);
-  ~CShape();
+  virtual ~CShape();
 
-  virtual double volume() const;
-  virtual double area() const;
+  virtual double area() const = 0;
+  virtual void print(std::ostream &) const = 0;
+  friend std::ostream &operator<<(std::ostream &, const CShape &);
 };
 
 #endif

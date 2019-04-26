@@ -5,16 +5,17 @@
 
 class CSquare : public CTwoDimensionalShape
 {
-private:
+public:
   double sideLen;
   double centerX, centerY;
+
 public:
   CSquare();
-  ~CSquare();
+  virtual ~CSquare();
+  CSquare(const double &sideLen_, const double &centerX_ = 0, const double &centerY_ = 0);
 
-  CSquare(const double &sideLen_, const double &centerX_, const double &centerY_);
-  
   double area() const override final;
+  void print(std::ostream &out) const override final;
 };
 
 #endif
