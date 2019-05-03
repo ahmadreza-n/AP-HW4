@@ -6,8 +6,6 @@
 template <typename T>
 void printContainer(const T&, std::string);
 
-template <typename T>
-void printContainer(const T&, const T& end);
 
 int main()
 {
@@ -57,15 +55,6 @@ template <typename T>
 void printContainer(const T& list, std::string message)
 {
     std::cout << message << std::endl;
-    printContainer(list.begin(), list.end());
+    std::for_each(list.begin(), list.end(), [](const int &i ){std::cout << i << ", ";});
     std::cout << std::endl;
-}
-
-template <typename T>
-void printContainer(const T& begin, const T& end) {
-  T it{begin};
-  while (it != end) {
-    std::cout << *it << ", ";
-    it++;
-  }
 }
