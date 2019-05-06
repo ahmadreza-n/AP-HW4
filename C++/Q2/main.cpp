@@ -6,6 +6,9 @@
 
 void fillVector(std::vector<std::unique_ptr<std::string>> &);
 
+template <typename T>
+void printDetails(const std::vector<T> &, size_t);
+
 int main()
 {
     std::vector<std::unique_ptr<std::string>> v1;
@@ -36,11 +39,17 @@ void fillVector(std::vector<std::unique_ptr<std::string>> &v)
         temp += static_cast<char>((i / 10) % 10 + '0');
         temp += static_cast<char>((i / 100) % 10 + '0');
         v.push_back(std::unique_ptr<std::string>{new std::string{temp}});
-        std::cout << "iteration " << i << ":" << std::endl;
-        std::cout << *v[i] << std::endl;
-        std::cout << "size: " << v.size() << std::endl;
-        std::cout << "capacity: " << v.capacity() << std::endl;
-        std::cout << std::setfill('=') << std::setw(15) << '=';
-        std::cout << std::endl;
+        printDetails(v, i);
     }
+}
+
+template <typename T>
+void printDetails(const std::vector<T> &arr, size_t i)
+{
+    std::cout << "iteration " << i << ":" << std::endl;
+    std::cout << *arr[i] << std::endl;
+    std::cout << "size: " << arr.size() << std::endl;
+    std::cout << "capacity: " << arr.capacity() << std::endl;
+    std::cout << std::setfill('=') << std::setw(15) << '=';
+    std::cout << std::endl;
 }

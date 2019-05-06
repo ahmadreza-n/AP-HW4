@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -c
 LXXFLAGS = -std=c++17
-OBJECTS = main.o shape.o twoDimensionalShape.o threeDimensionalShape.o square.o circle.o cube.o sphere.o
+OBJECTS = main.o shape.o twoDimensionalShape.o threeDimensionalShape.o square.o circle.o cube.o sphere.o point.o
 TARGET = main
 
 
@@ -23,6 +23,7 @@ cube.o: cube.h cube.cpp threeDimensionalShape.h threeDimensionalShape.cpp shape.
 	$(CXX) $(CXXFLAGS) cube.cpp
 sphere.o: sphere.h sphere.cpp threeDimensionalShape.h threeDimensionalShape.cpp shape.h shape.cpp
 	$(CXX) $(CXXFLAGS) sphere.cpp
-
+point.o: point.h point.cpp
+	$(CXX) $(CXXFLAGS) point.cpp
 clean:
 	rm -f $(TARGET) $(OBJECTS)

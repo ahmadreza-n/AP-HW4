@@ -36,3 +36,10 @@ void CSphere::print(std::ostream &out) const
     out << std::setfill('=') << std::setw(25) << '=';
     out << std::endl;
 }
+
+void CSphere::operator+(const CPoint &point) {
+  centerX += point.x;
+  centerY += point.y;
+  centerZ += point.z;
+
+}

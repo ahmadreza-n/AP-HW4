@@ -1,6 +1,7 @@
 #ifndef SHAPE_H
 #define SHAPE_H
 #include <iostream>
+#include "point.h"
 
 class CShape
 {
@@ -8,13 +9,13 @@ protected:
   int dimensionSize;
 
 public:
-  CShape();
-  CShape(const int &dimensionSize_);
+  CShape(const int &dimensionSize_ = 0);
   virtual ~CShape();
 
-  virtual double area() const = 0;
   virtual void print(std::ostream &) const = 0;
   friend std::ostream &operator<<(std::ostream &, const CShape &);
+
+  virtual void operator+(const CPoint &) = 0;
 };
 
 #endif

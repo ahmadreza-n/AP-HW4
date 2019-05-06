@@ -12,6 +12,8 @@ public:
   virtual double volume() const = 0;
   virtual double area() const = 0;
   virtual void print(std::ostream &) const override = 0;
+
+  virtual CShape operator+(const CPoint &) override = 0;
 };
 
 #endif

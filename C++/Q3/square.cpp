@@ -29,3 +29,9 @@ void CSquare::print(std::ostream &out) const
     out << std::setfill('=') << std::setw(25) << '=';
     out << std::endl;
 }
+
+void CSquare::operator+(const CPoint &point)
+{
+    centerX += point.x;
+    centerY += point.y;
+}

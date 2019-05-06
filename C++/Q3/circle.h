@@ -15,6 +15,8 @@ public:
 
   double area() const override final;
   void print(std::ostream &) const override final;
+  
+  virtual void operator+(const CPoint &) override final;
 };
 
 #endif

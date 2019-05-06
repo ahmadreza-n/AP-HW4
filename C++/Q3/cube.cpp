@@ -35,3 +35,9 @@ void CCube::print(std::ostream &out) const
     out << std::setfill('=') << std::setw(25) << '=';
     out << std::endl;
 }
+
+void CCube::operator+(const CPoint &point) {
+  centerX += point.x;
+  centerY += point.y;
+  centerZ += point.z;
+}
