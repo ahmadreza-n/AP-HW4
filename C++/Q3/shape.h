@@ -5,17 +5,17 @@
 
 class CShape
 {
-protected:
-  int dimensionSize;
+  protected:
+    int dimensionSize;
 
-public:
-  CShape(const int &dimensionSize_ = 0);
-  virtual ~CShape();
+  public:
+    CShape(const int &dimensionSize_ = 0);
+    virtual ~CShape();
 
-  virtual void print(std::ostream &) const = 0;
-  friend std::ostream &operator<<(std::ostream &, const CShape &);
-
-  virtual void operator+(const CPoint &) = 0;
+    virtual void print(std::ostream &) const = 0;
+    friend std::ostream &operator<<(std::ostream &, const CShape &);
+    
+    virtual void operator+(const CPoint &) = 0;
 };
 
 #endif
