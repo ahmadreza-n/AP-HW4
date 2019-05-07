@@ -15,7 +15,6 @@ class CShape
     virtual void print(std::ostream &) const = 0;
     friend std::ostream &operator<<(std::ostream &, const CShape &);
     
-    virtual void operator+(const CPoint &) = 0;
 };
 
 #endif

@@ -16,7 +16,7 @@ class CSquare : public CTwoDimensionalShape
     double area() const override final;
     void print(std::ostream &out) const override final;
 
-    void operator+(const CPoint &) override final;
+    CSquare operator+(const CPoint &); //changes square center
 };
 
 #endif

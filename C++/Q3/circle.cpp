@@ -7,7 +7,7 @@ CCircle::~CCircle()
 {
 }
 
-CCircle::CCircle(double radius_, double centerX_, double centerY_)
+CCircle::CCircle(const double &radius_, const double &centerX_, const double &centerY_)
     : CTwoDimensionalShape{}, radius{radius_}, centerX{centerX_}, centerY{centerY_}
 {
 }
@@ -28,8 +28,7 @@ void CCircle::print(std::ostream &out) const
     out << std::endl;
 }
 
-void CCircle::operator+(const CPoint &point)
+CCircle CCircle::operator+(const CPoint &point)
 {
-    centerX += point.x;
-    centerY += point.y;
+    return CCircle{radius, centerX + point.x, centerY + point.y};
 }

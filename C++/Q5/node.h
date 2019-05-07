@@ -6,7 +6,7 @@ class CNode
 {
 public:
   T value;
-  CNode<T> *previous;
+  CNode<T> *previous; //previous node's addres
 
 public:
   CNode();

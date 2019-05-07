@@ -6,8 +6,8 @@ template <typename T>
 class CStack
 {
 private:
-  CNode<T> *last;
-  int count;
+  CNode<T> *last; //last element address
+  int count; //how many elements
 
 public:
   CStack();

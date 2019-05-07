@@ -7,7 +7,7 @@ CSphere::~CSphere()
 {
 }
 
-CSphere::CSphere(double radius_, double centerX_, double centerY_, double centerZ_)
+CSphere::CSphere(const double &radius_, const double &centerX_, const double &centerY_, const double &centerZ_)
     : CThreeDimensionalShape{}, radius{radius_}, centerX{centerX_}, centerY{centerY_}, centerZ{centerZ_}
 {
 }
@@ -34,9 +34,7 @@ void CSphere::print(std::ostream &out) const
     out << std::endl;
 }
 
-void CSphere::operator+(const CPoint &point)
+CSphere CSphere::operator+(const CPoint &point)
 {
-    centerX += point.x;
-    centerY += point.y;
-    centerZ += point.z;
+    return CSphere{radius, centerX + point.x, centerY + point.y, centerZ + point.z};
 }

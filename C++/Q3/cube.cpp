@@ -6,7 +6,7 @@ CCube::~CCube()
 {
 }
 
-CCube::CCube(double sideLen_, double centerX_, double centerY_, double centerZ_)
+CCube::CCube(const double &sideLen_, const double &centerX_, const double &centerY_, const double &centerZ_)
     : CThreeDimensionalShape{}, sideLen{sideLen_}, centerX{centerX_}, centerY{centerY_}, centerZ{centerZ_}
 {
 }
@@ -33,9 +33,7 @@ void CCube::print(std::ostream &out) const
     out << std::endl;
 }
 
-void CCube::operator+(const CPoint &point)
+CCube CCube::operator+(const CPoint &point)
 {
-    centerX += point.x;
-    centerY += point.y;
-    centerZ += point.z;
+    return CCube{sideLen, centerX + point.x, centerY + point.y, centerZ + point.z};
 }

@@ -15,15 +15,17 @@ int main()
 
     std::vector<int> b(50);
     srand(time(NULL));
-    std::generate(b.begin(), b.end(), [](){return rand() % 50 + 1;});
+    std::generate(b.begin(), b.end(), []() { return rand() % 50 + 1; });
     printContainer(b, "b is:");
 
     std::sort(b.begin(), b.end(), std::less<>());
     b.erase(std::unique(b.begin(), b.end()), b.end());
     printContainer(b, "b after removing duplicated members:");
+    
     std::vector<int> c(50);
     int num{1};
-    std::for_each(c.begin(), c.end(), [&num](int &i) {i = num; num++; });
+    std::generate(c.begin(), c.end(), [&num]() { return num++; });
+    std::random_shuffle(c.begin(), c.end());
 
     printContainer(c, "c is:");
 

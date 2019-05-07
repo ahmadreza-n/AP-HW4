@@ -9,14 +9,14 @@ class CSphere : public CThreeDimensionalShape
     double radius, centerX, centerY, centerZ;
 
   public:
-    CSphere(double radius_ = 0, double centerX = 0, double centerY = 0, double centerZ = 0);
+    CSphere(const double &radius_ = 0, const double &centerX = 0, const double &centerY = 0, const double &centerZ = 0);
     ~CSphere();
 
     double volume() const override final;
     double area() const override final;
     void print(std::ostream &) const override final;
 
-    void operator+(const CPoint &) override final;
+    CSphere operator+(const CPoint &); //changes sphere's center
 };
 
 #endif

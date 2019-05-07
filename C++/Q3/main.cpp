@@ -16,10 +16,12 @@ int main()
 
 	CPoint threeD{1, 2, 3}, twoD{1, 2};
 
-	*ptr[0] + twoD;
-	*ptr[1] + twoD;
-	*ptr[2] + threeD;
-	*ptr[3] + threeD;
+	sqr = sqr + twoD;
+	sph = sph + threeD;
+	cub = cub + threeD;
+	cir = cir + twoD;
+
+	std::cout << "after changing centers:\n";
 
 	for (int x = 0; x < 4; ++x)
 		std::cout << *(ptr[x]) << '\n';

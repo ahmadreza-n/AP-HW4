@@ -26,8 +26,7 @@ void CSquare::print(std::ostream &out) const
     out << std::endl;
 }
 
-void CSquare::operator+(const CPoint &point)
+CSquare CSquare::operator+(const CPoint &point)
 {
-    centerX += point.x;
-    centerY += point.y;
+    return CSquare{sideLen, centerX + point.x, centerY + point.y};
 }
