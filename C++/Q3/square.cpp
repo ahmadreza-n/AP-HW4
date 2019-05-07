@@ -1,10 +1,6 @@
 #include "square.h"
 #include <iomanip>
 
-CSquare::CSquare() : CSquare{0}
-{
-}
-
 CSquare::CSquare(const double &sideLen_, const double &centerX_, const double &centerY_)
     : CTwoDimensionalShape{}, sideLen{sideLen_}, centerX{centerX_}, centerY{centerY_}
 {

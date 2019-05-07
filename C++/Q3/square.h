@@ -5,19 +5,18 @@
 
 class CSquare : public CTwoDimensionalShape
 {
-public:
-  double sideLen;
-  double centerX, centerY;
+  private:
+    double sideLen;
+    double centerX, centerY;
 
-public:
-  CSquare();
-  virtual ~CSquare();
-  CSquare(const double &sideLen_, const double &centerX_ = 0, const double &centerY_ = 0);
+  public:
+    CSquare(const double &sideLen_ = 0, const double &centerX_ = 0, const double &centerY_ = 0);
+    virtual ~CSquare();
 
-  double area() const override final;
-  void print(std::ostream &out) const override final;
+    double area() const override final;
+    void print(std::ostream &out) const override final;
 
-  void operator+(const CPoint &) override final;
+    void operator+(const CPoint &) override final;
 };
 
 #endif

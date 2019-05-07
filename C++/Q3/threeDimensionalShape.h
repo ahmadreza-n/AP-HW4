@@ -4,16 +4,16 @@
 
 class CThreeDimensionalShape : public CShape
 {
-private:
-public:
-  CThreeDimensionalShape();
-  virtual ~CThreeDimensionalShape();
+  private:
+  public:
+    CThreeDimensionalShape();
+    virtual ~CThreeDimensionalShape();
 
-  virtual double volume() const = 0;
-  virtual double area() const = 0;
-  virtual void print(std::ostream &) const override = 0;
+    virtual double volume() const = 0;
+    virtual double area() const = 0;
+    virtual void print(std::ostream &) const override = 0;
 
-  virtual void operator+(const CPoint &) override = 0;
+    virtual void operator+(const CPoint &) override = 0;
 };
 
 #endif

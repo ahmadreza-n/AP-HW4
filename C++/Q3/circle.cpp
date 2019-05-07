@@ -1,10 +1,7 @@
 #include "circle.h"
+
 #include <iomanip>
 #include <cmath>
-
-CCircle::CCircle() : CCircle{0}
-{
-}
 
 CCircle::~CCircle()
 {
@@ -31,7 +28,8 @@ void CCircle::print(std::ostream &out) const
     out << std::endl;
 }
 
-void CCircle::operator+(const CPoint &point) {
-  centerX += point.x;
-  centerY += point.y;
+void CCircle::operator+(const CPoint &point)
+{
+    centerX += point.x;
+    centerY += point.y;
 }
