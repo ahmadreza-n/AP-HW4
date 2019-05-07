@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include <vector>
 #include <algorithm>
 #include <set>
@@ -36,24 +35,24 @@ int main()
 
   printContainer(vec, "duplicated members erased");
 
-  std::set<int> s{vec.begin(), vec.end()};
+  std::set<int> s{};
+  for (size_t i = 0; i < vec.size(); i++)
+  {
+    s.insert(vec[i]);
+  }
 
   printContainer(s, "set created");
 
   s.erase(std::find_if(s.begin(), s.end(), [](const int &i) { return i > 3; }), s.end());
 
-  printContainer(s, "elemnts greater than 3 erased");
+  printContainer(s, "elemnts greater than3 erased");
   return 0;
 }
 
 template <typename T>
 void printContainer(const T &list, std::string message)
 {
-  std::cout << std::setfill('=') << std::setw(25) << '=';
-  std::cout << std::endl;
   std::cout << message << std::endl;
   std::for_each(list.begin(), list.end(), [](const int &i) { std::cout << i << ", "; });
-  std::cout << std::endl;
-  std::cout << std::setfill('=') << std::setw(25) << '=';
   std::cout << std::endl;
 }

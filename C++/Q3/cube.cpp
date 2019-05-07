@@ -1,6 +1,9 @@
 #include "cube.h"
-
 #include <iomanip>
+
+CCube::CCube() : CCube{0}
+{
+}
 
 CCube::~CCube()
 {
@@ -33,9 +36,8 @@ void CCube::print(std::ostream &out) const
     out << std::endl;
 }
 
-void CCube::operator+(const CPoint &point)
-{
-    centerX += point.x;
-    centerY += point.y;
-    centerZ += point.z;
+void CCube::operator+(const CPoint &point) {
+  centerX += point.x;
+  centerY += point.y;
+  centerZ += point.z;
 }

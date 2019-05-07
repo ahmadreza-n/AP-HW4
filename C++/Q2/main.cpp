@@ -4,10 +4,10 @@
 #include <string>
 #include <iomanip>
 
-void fillVector(std::vector<std::unique_ptr<std::string>> &); //fills vector with desired values
+void fillVector(std::vector<std::unique_ptr<std::string>> &);
 
 template <typename T>
-void printDetails(const std::vector<T> &, size_t); //prints vector log and vec[i]
+void printDetails(const std::vector<T> &, size_t);
 
 int main()
 {
@@ -38,7 +38,7 @@ void fillVector(std::vector<std::unique_ptr<std::string>> &v)
         temp += static_cast<char>(i % 10 + '0');
         temp += static_cast<char>((i / 10) % 10 + '0');
         temp += static_cast<char>((i / 100) % 10 + '0');
-        v.push_back(std::make_unique<std::string>(temp));
+        v.push_back(std::unique_ptr<std::string>{new std::string{temp}});
         printDetails(v, i);
     }
 }

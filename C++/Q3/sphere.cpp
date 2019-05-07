@@ -1,7 +1,10 @@
 #include "sphere.h"
-
 #include <iomanip>
 #include <cmath>
+
+CSphere::CSphere() : CSphere{0}
+{
+}
 
 CSphere::~CSphere()
 {
@@ -34,9 +37,9 @@ void CSphere::print(std::ostream &out) const
     out << std::endl;
 }
 
-void CSphere::operator+(const CPoint &point)
-{
-    centerX += point.x;
-    centerY += point.y;
-    centerZ += point.z;
+void CSphere::operator+(const CPoint &point) {
+  centerX += point.x;
+  centerY += point.y;
+  centerZ += point.z;
+
 }

@@ -11,6 +11,8 @@ int main()
 	CCircle cir(3.5, 6, 9);
 	CShape *ptr[4] = {&cir, &sqr, &sph, &cub};
 
+	*ptr[0];
+
 	for (int x = 0; x < 4; ++x)
 		std::cout << *(ptr[x]) << '\n';
 
